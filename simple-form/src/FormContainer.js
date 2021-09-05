@@ -13,9 +13,8 @@ class FormContainer extends Component {
             vegetarian: false,
             kosher: false
         }
-        this.handleChange = this.handleChange.bind(this)
     }
-    handleChange(event) {
+    handleChange = (event) => {
         const {name, value, type, checked} = event.target
         this.setState({
             [name]: value
