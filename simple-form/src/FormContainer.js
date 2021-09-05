@@ -2,9 +2,7 @@ import React, {Component} from "react"
 import FormComponent from './FormComponent'
 
 class FormContainer extends Component {
-    constructor() {
-        super()
-        this.state = {
+    state = {
             firstName: "",
             lastName: "",
             age: 0,
@@ -12,7 +10,6 @@ class FormContainer extends Component {
             destination: "",
             vegetarian: false,
             kosher: false
-        }
     }
     handleChange = (event) => {
         const {name, value, type, checked} = event.target
