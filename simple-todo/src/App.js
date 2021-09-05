@@ -4,15 +4,10 @@ import todosData from "./todosData"
 import './App.css'
 
 class App extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            todos: todosData
-        }
-        this.handleChange = this.handleChange.bind(this)
+    state = {
+        todos: todosData
     }
-    
-    handleChange(id) {
+    handleChange = (id) => {
         this.setState(prevState => {
             const updatedTodos = prevState.todos.map(todo => {
                 if (todo.id === id) {
