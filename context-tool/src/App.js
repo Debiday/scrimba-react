@@ -13,7 +13,6 @@ function App() {
           <Button theme={theme} />
         )}
       </ThemeContextConsumer>
-          <Button theme="light" />
     </div>
   )
 }

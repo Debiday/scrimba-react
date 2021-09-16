@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {ThemeContextConsumer} from "./themeContext"
 
 function Button(props) {
     return (
-        <button className={`${props.theme}-theme`}>Switch Theme</button>
+        <ThemeContextConsumer>{context => (
+            <button onClick={context.toggleTheme} className={`${context.theme}-theme`}>Switch theme</button>
+        )}</ThemeContextConsumer>
     )
 }
 
