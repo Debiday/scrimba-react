@@ -4,10 +4,8 @@ import App from './App'
 import ThemeContext from './themeContext'
 
 ReactDOM.render(
-  <React.StrictMode>
-  <ThemeContext.Provider value={'light'}>
+  <ThemeContext.Provider value={"dark"}>
       <App />
-  </ThemeContext.Provider>
-  </React.StrictMode>,
+  </ThemeContext.Provider>,
   document.getElementById('root')
-);
+)

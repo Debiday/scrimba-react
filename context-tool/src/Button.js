@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ThemeContext from './themeContext'
 
 function Button(props) {
     return (
