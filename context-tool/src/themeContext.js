@@ -1,5 +1,14 @@
-import React from 'react'
+import React, {Component} from 'react'
+const {Provider, Consumer} = React.createContext()
 
-const ThemeContext = React.createContext()
+class ThemeContextProvider extends Component {
+    render() {
+        return (
+            <Provider value={"dark"}>
+                {this.props.children}
+            </Provider>
+        )
+    }
+}
 
-export default ThemeContext
+export {ThemeContextProvider, Consumer as ThemeContextConsumer}
