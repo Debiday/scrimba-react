@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import randomColor from "randomcolor"
 
 function App() {
   const[inputData, setInputData] = useState({firstName: '', lastName: '', birthday: ''})
   const[contactsData, setContactsData] = useState([])
+  const[color, setColor] = useState("")
 
   function handleChange(event) {
     const {name, value} = event.target
@@ -13,6 +15,10 @@ function App() {
     event.preventDefault()
     setContactsData(prevContacts => [...prevContacts, inputData])
   }
+
+  useEffect(() => {
+    setColor(randomColor())
+  }, [contactsData])
 
   const contacts = contactsData.map(contact => <h2 key={contact.firstName + contact.lastName + contact.birthday}>{contact.firstName} {contact.lastName}, born on {contact.birthday}.</h2>)
 
@@ -48,7 +54,7 @@ function App() {
                     
           />
           <br />
-          <button>Add contact</button>
+          <button style={{backgroundColor: color}}>Add contact</button>
       </form>
       {contacts}
     </>
