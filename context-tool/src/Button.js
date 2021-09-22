@@ -6,7 +6,10 @@ function Button(props) {
     const context = useContext(ThemeContext)
     return (
         <div>
-        <button onClick={context.toggleTheme} className={`${context.theme}-theme`}>Switch theme</button>
+        <button 
+            onClick={context.toggleTheme} 
+            className={`${context.theme}-theme`}
+            >Switch theme</button>
         </div>
     )
 }
