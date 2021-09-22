@@ -31,6 +31,7 @@ function App() {
   function endGame() {
     setIsTimeRunning(false)
     setWordCount(calculateWordCount(text))
+    console.log("wordCount", wordCount)
   }
 
   useEffect(() => {
