@@ -1,26 +1,35 @@
 import React from 'react'
 import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Profile from './pages/profile/Profile'
+import Info from './pages/profile/Info'
+import Settings from './pages/profile/Settings'
 import './styles.css'
+
+import {Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/profile'>
+          <Profile />
+        </Route>
+        <Route path='/profile/info'>
+          <Info />
+        </Route>
+        <Route path='/profile/settings'>
+          <Settings />
+        </Route>
+      </Switch>
+      <Footer />
+    </div> 
+  )
 }
 
-export default App;
+export default App
