@@ -2,8 +2,10 @@ import React from 'react'
 
 function Footer(){
     return(
-        <Footer>
+        <footer>
             <p className="footer">©2020- Router Rainbow Group</p>
-        </Footer>
+        </footer>
     )
 }
+
+export default Footer
