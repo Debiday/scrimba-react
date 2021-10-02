@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Profile from './pages/profile/Profile'
 import Info from './pages/profile/Info'
 import Settings from './pages/profile/Settings'
+import ServicesList from './pages/services/ServicesList'
+import ServiceDetail from './pages/services/ServiceDetail'
 import './styles.css'
 
 import {Switch, Route} from 'react-router-dom'
@@ -25,6 +27,12 @@ function App() {
         </Route>
         <Route path='/profile/settings'>
           <Settings />
+        </Route>
+        <Route exact path='/services'>
+          <ServicesList />
+        </Route>
+        <Route path='/services/:serviceId'>
+          <ServiceDetail />
         </Route>
       </Switch>
       <Footer />
