@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react'
 import {Context} from '../Context'
+import Proptypes from 'prop-types'
 
 function Image({className, img}) {
 
@@ -32,6 +33,15 @@ function Image({className, img}) {
             {cartIcon}
         </div>
     )
+}
+
+Image.propTypes = {
+    className: Proptypes.string,
+    img: Proptypes.shape({
+        id: Proptypes.string.isRequired,
+        url: Proptypes.string.isRequired,
+        isFavorite: Proptypes.bool
+    })
 }
 
 export default Image
