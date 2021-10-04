@@ -4,6 +4,9 @@ function Image({className, img}) {
 
     const [hovered, setHovered] = useState(false)
 
+    const heartIcon = hovered && <i className="ri-heart-line favorite"></i>
+    const cartIcon = hovered && <i className="ri-add-circle-line cart"></i>
+
     console.log(hovered)
 
     return(
@@ -13,6 +16,8 @@ function Image({className, img}) {
         onMouseLeave={() => setHovered(false)}
         >
             <img src={img.url} className='image-grid' alt=''/>
+            {heartIcon}
+            {cartIcon}
         </div>
     )
 }
